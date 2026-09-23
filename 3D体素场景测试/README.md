@@ -21,7 +21,7 @@
 | --- | --- | --- |
 | **ChatGPT 5.6 Luna** | [构建页面](./test-ChatGPT-5.6-Luna-natural-selection-voxel/dist/index.html) · [完整目录](./test-ChatGPT-5.6-Luna-natural-selection-voxel/) | 保存了设计提示词、参考图分析、体素雕塑规格及 Vite 工程；可沿着“需求—分析—实现”查看材料。 |
 | **ChatGPT 6 Luna** | [场景页面与源码](./test-ChatGPT-6-Luna-natural-selection-voxel/) · [项目说明](./test-ChatGPT-6-Luna-natural-selection-voxel/README.md) | README 记录了程序化舰体、体素数据表达、镜头和交互方式，也说明该版本的运行依赖。 |
-| **DeepSeek V4.1 Flash** | [单文件场景](./test-DeepSeek-V4.1-Flash-natural-selection-voxel/自然选择号-体素全景.html) · [完整目录](./test-DeepSeek-V4.1-Flash-natural-selection-voxel/) | 交付可双击打开的 HTML；项目说明记录了多机位、构建与排错过程，并附有验收截图。 |
+| **DeepSeek V4.1 Flash** | [单文件场景](./test-DeepSeek-V4.1-Flash-natural-selection-voxel/自然选择号-体素全景.html) · [完整目录](./test-DeepSeek-V4.1-Flash-natural-selection-voxel/) | 交付可双击打开的 HTML；项目说明记录了多机位、构建与排错过程，并附有[验收截图](./test-DeepSeek-V4.1-Flash-natural-selection-voxel/验收截图/)。 |
 | **Qwen 3.8 Flash** | [独立 HTML 作品](./test-Qwen-3.8-flash-natural-selection-voxel/natural-selection-voxel.html) · [完整目录](./test-Qwen-3.8-flash-natural-selection-voxel/) | 以单文件形式保留场景结果，适合直接检查页面实现。 |
 | **SenseNova 6.8 Flash** | [单文件场景](./test-sensenova-6.8-flash-natural-selection-voxel/自然选择号-体素全景-顶级版.html) · [完整目录](./test-sensenova-6.8-flash-natural-selection-voxel/) | 同时保留页面、源码、构建脚本和本地依赖，可查看作品与工程组织。 |
 
@@ -51,4 +51,3 @@
 ## 如何运行
 
 各组交付形式和依赖不同：有的提供可双击打开的单文件，有的需要本地 HTTP 服务或开发服务器。运行前先看对应目录的 README、提示词文件或启动脚本；不要假定所有作品都能用同一种命令启动。
-

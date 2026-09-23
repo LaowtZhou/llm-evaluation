@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | ChatGPT 5.6 Luna | [项目目录](./3D体素场景测试/test-ChatGPT-5.6-Luna-natural-selection-voxel/) · [构建页面](./3D体素场景测试/test-ChatGPT-5.6-Luna-natural-selection-voxel/dist/index.html) | [设计提示词](./3D体素场景测试/test-ChatGPT-5.6-Luna-natural-selection-voxel/DESIGN_PROMPT.md) · [参考图分析](./3D体素场景测试/test-ChatGPT-5.6-Luna-natural-selection-voxel/analysis.md) |
 | ChatGPT 6 Luna | [项目目录与页面](./3D体素场景测试/test-ChatGPT-6-Luna-natural-selection-voxel/) · [使用说明](./3D体素场景测试/test-ChatGPT-6-Luna-natural-selection-voxel/README.md) | 场景源码、交互说明与运行要求 |
-| DeepSeek V4.1 Flash | [项目目录](./3D体素场景测试/test-DeepSeek-V4.1-Flash-natural-selection-voxel/) · [单文件作品](./3D体素场景测试/test-DeepSeek-V4.1-Flash-natural-selection-voxel/自然选择号-体素全景.html) | [实现、验收与问题记录](./3D体素场景测试/test-DeepSeek-V4.1-Flash-natural-selection-voxel/README.md) · 验收截图 |
+| DeepSeek V4.1 Flash | [项目目录](./3D体素场景测试/test-DeepSeek-V4.1-Flash-natural-selection-voxel/) · [单文件作品](./3D体素场景测试/test-DeepSeek-V4.1-Flash-natural-selection-voxel/自然选择号-体素全景.html) | [实现、验收与问题记录](./3D体素场景测试/test-DeepSeek-V4.1-Flash-natural-selection-voxel/README.md) · [验收截图](./3D体素场景测试/test-DeepSeek-V4.1-Flash-natural-selection-voxel/验收截图/) |
 | Qwen 3.8 Flash | [项目目录与单文件作品](./3D体素场景测试/test-Qwen-3.8-flash-natural-selection-voxel/) | 独立 HTML 交付物 |
 | SenseNova 6.8 Flash | [项目目录](./3D体素场景测试/test-sensenova-6.8-flash-natural-selection-voxel/) · [单文件作品](./3D体素场景测试/test-sensenova-6.8-flash-natural-selection-voxel/自然选择号-体素全景-顶级版.html) | 场景源码、构建脚本与本地依赖 |
 
