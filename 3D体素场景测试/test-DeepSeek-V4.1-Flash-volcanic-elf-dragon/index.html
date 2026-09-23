@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05090d" />
+    <title>EMBERFALL // CALDERA</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="world-canvas" aria-label="可 360 度旋转观察的 3D 体素火山战场"></canvas>
+    <div class="atmosphere" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="scene-loading" id="scene-loading" aria-live="polite"><span>◆</span></div>
+    <div class="scene-fallback" id="scene-fallback"><span>WebGL</span></div>
+    <button class="fullscreen-toggle" id="fullscreen-toggle" aria-label="切换全屏" title="切换全屏">⛶</button>
+    <script type="importmap">
+      {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}
+    </script>
+    <script type="module" src="./script.js?scene=final-voxel-3d"></script>
+  </body>
+</html>

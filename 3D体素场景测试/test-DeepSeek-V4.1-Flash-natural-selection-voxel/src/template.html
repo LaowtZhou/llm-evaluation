@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#03060d" />
+<title>自然选择号 · 体素全景 | Natural Selection Voxel Panorama</title>
+<meta name="description" content="在宇宙中飞行的自然选择号，全程体素程序生成，沉浸式全景。" />
+<style>/*__CSS__*/</style>
+</head>
+<body>
+
+<div id="scene-root" class="scene-root"></div>
+<div class="fx-scanlines" aria-hidden="true"></div>
+<div class="fx-grain" aria-hidden="true"></div>
+
+<div id="hud" class="hud">
+
+  <header class="panel brand">
+    <div class="brand-line">
+      <span class="tag">DEEP SPACE ARCHIVE</span>
+      <span class="tag tag--dim">VOXEL / 001</span>
+    </div>
+    <h1>自然选择号</h1>
+    <div class="brand-en">NATURAL&nbsp;SELECTION</div>
+    <p class="brand-sub">《三体 · 引力之外》特别设定版 · 全体素程序生成</p>
+  </header>
+
+  <section class="panel telemetry" aria-label="体素统计">
+    <div class="panel-title"><span>结构遥测</span><span class="dot"></span><span>STRUCTURE TELEMETRY</span></div>
+    <dl class="tele-list">
+      <div><dt>体素网格单元</dt><dd id="stat-cells">—</dd></div>
+      <div><dt>实体体素</dt><dd id="stat-voxels">—</dd></div>
+      <div><dt>内部填充体素</dt><dd id="stat-hidden">—</dd></div>
+      <div><dt>可见面片</dt><dd id="stat-faces">—</dd></div>
+      <div><dt>三角面</dt><dd id="stat-tris">—</dd></div>
+      <div><dt>构建耗时</dt><dd id="stat-build">—</dd></div>
+      <div class="is-live"><dt>实时帧率</dt><dd><span id="m-fps">—</span> <small>FPS</small></dd></div>
+    </dl>
+  </section>
+
+  <div class="shot-readout">
+    <span id="shot-name" class="shot-name">巡航</span>
+    <span id="shot-sub" class="shot-sub">CRUISE FLYBY</span>
+  </div>
+
+  <section class="panel deck" aria-label="机位控制">
+    <div class="panel-title"><span>机位</span><span class="dot"></span><span>CAMERA</span></div>
+    <div class="shot-tabs">
+      <button type="button" data-shot="0" class="shot-tab is-active">巡航</button>
+      <button type="button" data-shot="1" class="shot-tab">舰首</button>
+      <button type="button" data-shot="2" class="shot-tab">重力环</button>
+      <button type="button" data-shot="3" class="shot-tab">引擎</button>
+      <button type="button" data-shot="4" class="shot-tab">全景</button>
+    </div>
+    <div class="deck-actions">
+      <button type="button" id="btn-tour" class="mini is-active">自动巡航 开</button>
+      <button type="button" id="btn-reset" class="mini">复位视角</button>
+      <button type="button" id="btn-hide" class="mini">隐藏界面</button>
+    </div>
+  </section>
+
+  <footer class="hint">
+    <span><b>拖拽</b> 旋转视角</span>
+    <span><b>滚轮</b> 推拉镜头</span>
+    <span><b>1-5</b> 切换机位</span>
+    <span><b>空格</b> 暂停巡航</span>
+    <span><b>R</b> 复位</span>
+    <span><b>H</b> 隐藏界面</span>
+  </footer>
+
+</div>
+
+<div id="loading" class="loading">
+  <div class="loading-inner">
+    <div class="loading-mark">自然选择号</div>
+    <div class="loading-mark-en">NATURAL SELECTION</div>
+    <div class="loading-bar"><i id="loading-bar"></i></div>
+    <div class="loading-meta">
+      <span id="loading-step">初始化</span>
+      <span id="loading-pct">0%</span>
+    </div>
+    <div class="loading-note">体素雕塑 → 面剔除 → AO 烘焙 → 星云铺设 → 引擎点火</div>
+  </div>
+</div>
+
+<div id="error-card" class="error-card" hidden>
+  <div class="error-inner">
+    <div class="error-title">三维渲染无法启动</div>
+    <p id="error-text">当前浏览器无法运行本场景。</p>
+    <button type="button" id="retry-button">重新加载</button>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>/*__PANORAMA__*/</script>
+<script>/*__JS__*/</script>
+</body>
+</html>

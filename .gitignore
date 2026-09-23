@@ -1,0 +1,6 @@
+# Generated and local files
+**/node_modules/
+**/.env
+**/.env.*
+**/Thumbs.db
+**/.DS_Store

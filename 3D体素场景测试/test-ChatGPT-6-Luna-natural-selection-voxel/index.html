@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#080b13" />
+    <meta name="description" content="自然选择号 · 一艘驶向未知宇宙的体素世代飞船。" />
+    <title>自然选择号 · VOXEL ODYSSEY</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="mission" id="mission">
+      <div class="backdrop" aria-hidden="true"></div>
+      <div class="backdrop-grain" aria-hidden="true"></div>
+      <div class="edge-shade" aria-hidden="true"></div>
+      <canvas id="universe" aria-label="可交互的自然选择号三维体素场景"></canvas>
+
+      <header class="topbar chrome">
+        <a class="brand" href="#mission" aria-label="自然选择号首页">
+          <span class="brand-mark"><i></i><i></i><i></i></span>
+          <span class="brand-name">THREE-BODY <b>·</b> VOYAGER</span>
+        </a>
+        <div class="mission-status"><span class="live-dot"></span><span>深空航行中</span><span class="status-sep">/</span><span class="mono">航次 027</span></div>
+        <div class="top-actions">
+          <button class="icon-button sound-toggle" id="soundToggle" aria-label="切换环境音" title="环境音已关闭">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          </button>
+          <button class="icon-button fullscreen-button" id="fullscreenToggle" aria-label="进入全屏" title="全屏">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4M16 4h4v4M20 16v4h-4M4 16v4h4"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="hero-copy chrome" aria-labelledby="ship-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span> DEEP SPACE · GENERATION SHIP</div>
+        <h1 id="ship-title">自然选择<span class="title-suffix">号</span></h1>
+        <div class="english-title">NATURAL SELECTION</div>
+        <p class="hero-description">当最后一片土地沉入星海，<br />人类把家园，造进了群星之间。</p>
+        <div class="hero-meta">
+          <div><span class="meta-label">建造纪元</span><strong>2098 <small>AD</small></strong></div>
+          <span class="meta-rule"></span>
+          <div><span class="meta-label">航行状态</span><strong class="meta-live"><i></i> NOMINAL</strong></div>
+        </div>
+      </section>
+
+      <aside class="ship-readout chrome" aria-label="飞船数据">
+        <div class="readout-head"><span>VESSEL / 03</span><span class="readout-cross">✳</span></div>
+        <div class="readout-name">自然选择号</div>
+        <div class="readout-sub">世代移民舰 <span>·</span> 第三舰队</div>
+        <div class="readout-divider"></div>
+        <div class="readout-grid">
+          <div><span>全长</span><strong>8.42 <small>KM</small></strong></div>
+          <div><span>乘员</span><strong>78,604</strong></div>
+          <div><span>巡航速度</span><strong>0.07 <small>C</small></strong></div>
+          <div><span>航行年限</span><strong>1,847 <small>Y</small></strong></div>
+        </div>
+        <div class="voxel-meter"><div><span>实时体素总数</span><strong id="voxelCount">计算中</strong></div><i><b></b></i></div>
+        <div class="readout-footer"><span class="signal-bars"><i></i><i></i><i></i><i></i><i></i></span> ALL SYSTEMS NOMINAL</div>
+      </aside>
+
+      <div class="ship-label label-ring chrome" aria-hidden="true"><span class="label-dot"></span><span>环形居住区</span><i></i></div>
+      <div class="ship-label label-core chrome" aria-hidden="true"><span class="label-dot orange"></span><span>中央脊柱</span><i></i></div>
+      <div class="ship-label label-engine chrome" aria-hidden="true"><span class="label-dot blue"></span><span>脉冲引擎 × 03</span><i></i></div>
+
+      <div class="left-rail chrome" aria-hidden="true"><span>FIG 01</span><i></i><span>深空观测</span></div>
+      <div class="right-rail chrome" aria-hidden="true"><span>DEEP FIELD</span><i></i><span>4.37 LY / 02</span></div>
+
+      <footer class="bottom-bar chrome">
+        <div class="interaction-hint"><span class="mouse-glyph"><i></i></span><span>拖动探索 <em>·</em> 滚轮缩放</span></div>
+        <div class="bottom-center"><span class="coordinates mono">α&nbsp; 04h 31m 38s&nbsp;&nbsp; δ&nbsp; +18° 21′</span><span class="bottom-divider"></span><span class="orbit-state"><i></i><span id="motionLabel">航行中</span></span></div>
+        <div class="controls">
+          <button class="control-button" id="viewToggle" aria-label="切换视角" title="切换视角"><span class="view-icon">◉</span><span>视角</span></button>
+          <button class="control-button" id="motionToggle" aria-label="暂停飞行" title="暂停 / 继续"><span class="play-icon" id="playIcon">Ⅱ</span><span id="motionButtonLabel">暂停</span></button>
+          <button class="control-button reset-button" id="resetView" aria-label="重置视角" title="重置视角"><span class="reset-icon">↺</span><span>重置</span></button>
+          <button class="control-button immersive-button" id="immersiveToggle" aria-label="切换沉浸模式" title="隐藏界面"><span class="immersive-icon">⛶</span><span id="immersiveLabel">沉浸</span></button>
+        </div>
+      </footer>
+
+      <div class="loading-state" id="loadingState" role="status" aria-live="polite">
+        <div class="loading-mark"><span></span><span></span><span></span></div>
+        <div class="loading-title">正在唤醒深空观测站</div>
+        <div class="loading-track"><i id="loadingProgress"></i></div>
+        <div class="loading-caption mono" id="loadingCaption">INITIALIZING VOXEL FIELD · 00%</div>
+      </div>
+      <div class="error-state" id="errorState" role="alert" hidden>
+        <div class="error-symbol">!</div>
+        <div><strong>观测设备未能启动</strong><p id="errorMessage">请检查浏览器是否支持 WebGL，然后重试。</p></div>
+        <button id="retryButton">重新连接 <span>↗</span></button>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <div class="crosshair" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </main>
+    <script type="module" src="./main.js" onerror="document.querySelector('#loadingState').classList.add('is-hidden'); document.querySelector('#errorState').hidden=false; document.querySelector('#errorMessage').textContent='3D 引擎未能加载。请连接网络后重试。'"></script>
+  </body>
+</html>

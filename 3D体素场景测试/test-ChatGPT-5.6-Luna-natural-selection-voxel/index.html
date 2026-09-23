@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#02050b" />
+    <meta name="description" content="Natural Selection · Million-voxel starship flight." />
+    <title>Natural Selection · Million Voxel Flight</title>
+  </head>
+  <body>
+    <main class="experience">
+      <div class="reference-sky" aria-hidden="true"></div>
+      <div id="scene-root" class="scene-root" aria-label="自然选择号百万体素沉浸式宇宙场景"></div>
+      <div class="scanlines" aria-hidden="true"></div>
+      <div class="noise" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-kicker">DEEP SPACE ARCHIVE / VOXEL FLIGHT 03</span>
+          <h1>NATURAL <em>SELECTION</em></h1>
+          <p>自然选择号 · 全体素结构 · 远航记录</p>
+        </div>
+        <div class="mission-readout">
+          <div><span class="signal-dot"></span><span id="system-status">LINK STANDBY</span></div>
+          <strong>03 / 07</strong>
+          <span class="mission-code">REFERENCE LOCKED</span>
+        </div>
+      </header>
+
+      <aside class="left-rail">
+        <div class="rail-label">SHIP CLASS</div>
+        <div class="rail-value">N.S. — 03 / SELECT</div>
+        <div class="rail-line"></div>
+        <div class="rail-label">ACTIVE MASS</div>
+        <div class="rail-value rail-value--accent"><span id="voxel-count">—</span> VOXELS</div>
+        <div class="rail-line"></div>
+        <div class="rail-label">DENSITY MODE</div>
+        <div id="density-label" class="rail-value">ALLOCATING</div>
+        <div class="rail-note">结构体素 · 船体装甲<br />环形栖居区 · 引擎尾焰</div>
+      </aside>
+
+      <section class="hero-caption">
+        <div class="caption-index">NATURAL SELECTION / 01</div>
+        <h2>穿越黑暗，<br /><span>把人类带向更远。</span></h2>
+        <div class="caption-meta"><span>DRAG TO ORBIT</span><span>SCROLL TO ZOOM</span><span>R TO RESET</span></div>
+      </section>
+
+      <section class="control-deck" aria-label="场景控制面板">
+        <div class="deck-head"><span>FLIGHT CONTROL</span><span id="view-label">PURSUIT VECTOR</span><span id="fps-readout">— FPS</span></div>
+        <div class="view-tabs" role="tablist" aria-label="视角选择">
+          <button class="view-tab is-active" data-view="pursuit" type="button">PURSUIT</button>
+          <button class="view-tab" data-view="ring" type="button">RING</button>
+          <button class="view-tab" data-view="engine" type="button">ENGINE</button>
+        </div>
+        <div class="deck-actions">
+          <button id="auto-button" class="control-button is-active" type="button">AUTO ORBIT</button>
+          <button id="reset-button" class="control-button" type="button">RESET VIEW</button>
+          <label class="quality-control"><span>QUALITY</span><select id="quality-select"><option value="cinematic" selected>CINEMATIC</option><option value="balanced">BALANCED</option><option value="low">LOW POWER</option></select></label>
+        </div>
+        <div class="deck-meter"><span>VOXEL RESOLUTION</span><div class="meter"><i></i></div><b>1M+</b></div>
+        <div class="deck-footer"><span>RANGE 14.8 AU</span><span>HEADING 037°</span><span id="time-readout">00:00</span></div>
+      </section>
+
+      <div id="loading-card" class="loading-card">
+        <div class="loading-glyph"><i></i><i></i><i></i></div>
+        <div><strong id="loading-title">ASSEMBLING THE SHIP</strong><span id="loading-copy">VOXEL FIELD / 0%</span></div>
+      </div>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <div id="error-card" class="error-card" hidden>
+        <strong>WEBGL SIGNAL LOST</strong>
+        <p>当前浏览器无法启动三维渲染。请开启硬件加速后重新加载。</p>
+        <button id="retry-button" class="control-button" type="button">RELOAD SCENE</button>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
